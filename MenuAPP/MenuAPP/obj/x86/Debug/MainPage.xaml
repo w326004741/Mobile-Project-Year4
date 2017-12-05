@@ -1,0 +1,41 @@
+﻿<Page
+    x:Class="MenuAPP.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MenuAPP"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Page.Resources>
+        <ResourceDictionary>
+            <DataTemplate x:Key="MenuItemDataTemplate">
+                <StackPanel Orientation="Horizontal">
+                    <SymbolIcon Symbol="{Binding Icon}" />
+                    <TextBlock Text="{Binding Text}" Margin="18" />
+                </StackPanel>
+            </DataTemplate>
+        </ResourceDictionary>
+    </Page.Resources>
+
+    <Grid x:ConnectionId='1' x:Name="rootGrid" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <SplitView x:ConnectionId='2' x:Name="mainSplitView" OpenPaneLength="150" CompactPaneLength="45" PaneBackground="LightGray" DisplayMode="CompactOverlay" IsPaneOpen="{Binding IsPaneOpen, Mode=TwoWay}">
+            <SplitView.Pane>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <StackPanel Orientation="Horizontal">
+                        <Button x:ConnectionId='4' x:Name="hamburgButton" FontFamily="Segoe MDL2 Assets" Content="&#xE700;" Command="{Binding HamburgButtonCommand}" />
+                        <TextBlock Margin="10,10,0,0" Text="{Binding HamburgTitle}" />
+                    </StackPanel>
+                    <ListView x:ConnectionId='3' Grid.Row="1" x:Name="mainListView" ItemsSource="{Binding MenuItems}" ItemTemplate="{StaticResource MenuItemDataTemplate}" />
+                </Grid>
+            </SplitView.Pane>
+            <Frame>
+            </Frame>
+        </SplitView>
+    </Grid>
+</Page>
+
