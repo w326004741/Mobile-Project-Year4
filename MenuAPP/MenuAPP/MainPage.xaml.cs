@@ -23,6 +23,7 @@ namespace MenuAPP
     /// </summary>
     public sealed partial class MainPage : Page
     {
+       // MainViewModel VM { get; set; } = new MainViewModel();
         public MainPage()
         {
             this.InitializeComponent();

@@ -7,15 +7,17 @@ using System.Threading.Tasks;
 
 namespace MenuAPP.ViewModel
 {
-    public class NotificationObject : INotifyPropertyChanged
+    // ViewModel的基类,作用是通知ViewModels的变化
+    public class NotificationObject : INotifyPropertyChanged 
     {
         public event PropertyChangedEventHandler PropertyChanged;
-        public void ProperyChange(string ProperyName)
+        public void RaisePropertyChanged(string ProperyName)
         {
             if (PropertyChanged != null)
             {
                 PropertyChanged.Invoke(this, new PropertyChangedEventArgs(ProperyName));
             }
+
 
         }
     }

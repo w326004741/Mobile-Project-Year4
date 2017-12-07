@@ -7,9 +7,10 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
+
     <Page.Resources>
         <ResourceDictionary>
-            <DataTemplate x:Key="MenuItemDataTemplate">
+            <DataTemplate x:Key="MenuItemDataTemplate" >
                 <StackPanel Orientation="Horizontal">
                     <SymbolIcon Symbol="{Binding Icon}" />
                     <TextBlock Text="{Binding Text}" Margin="18" />
@@ -19,7 +20,9 @@
     </Page.Resources>
 
     <Grid x:ConnectionId='1' x:Name="rootGrid" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <SplitView x:ConnectionId='2' x:Name="mainSplitView" OpenPaneLength="150" CompactPaneLength="45" PaneBackground="LightGray" DisplayMode="CompactOverlay" IsPaneOpen="{Binding IsPaneOpen, Mode=TwoWay}">
+        <!--OpenPaneLength: 设置SplitView打开的长度-->
+        <!--SplitView: https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.splitview-->
+            <SplitView x:ConnectionId='2' x:Name="mainSplitView" OpenPaneLength="150" CompactPaneLength="45" PaneBackground="LightGray" DisplayMode="CompactOverlay" IsPaneOpen="{Binding IsPaneOpen, Mode=TwoWay}">
             <SplitView.Pane>
                 <Grid>
                     <Grid.RowDefinitions>
@@ -33,8 +36,11 @@
                     <ListView x:ConnectionId='3' Grid.Row="1" x:Name="mainListView" ItemsSource="{Binding MenuItems}" ItemTemplate="{StaticResource MenuItemDataTemplate}" />
                 </Grid>
             </SplitView.Pane>
-            <Frame>
-            </Frame>
+
+            <Grid x:ConnectionId='5' x:Name="mianContent" Margin="150,0,0,0">
+                <TextBlock Text="Content" FontSize="24" VerticalAlignment="Center" HorizontalAlignment="Center" />
+            </Grid>
+            
         </SplitView>
     </Grid>
 </Page>

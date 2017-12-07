@@ -12,7 +12,8 @@ namespace MenuAPP.ViewModel
 {
     public class MainViewModel : NotificationObject
     {
-        // Menu List  菜单集合
+        // Menu List  
+        // 以下3个属性是用来做数据传输的数据属性
         private ObservableCollection<MenuItem> _menuItems;
         public ObservableCollection<MenuItem> MenuItems
         {
@@ -20,11 +21,11 @@ namespace MenuAPP.ViewModel
             set
             {
                 _menuItems = value;
-                ProperyChange("MenuItems");
+                RaisePropertyChanged("MenuItems");
             }
         }
 
-        // Menu Open check 检查菜单是否打开
+        // Menu Open check 
         private bool _isPaneOpen;
         public bool IsPaneOpen
         {
@@ -32,11 +33,11 @@ namespace MenuAPP.ViewModel
             set
             {
                 _isPaneOpen = value;
-                ProperyChange("IsPaneOpen");
+                RaisePropertyChanged("IsPaneOpen");
             }
         }
 
-        // Menu Title 菜单标题
+        // Menu Title 
         private string _hamburgTitle;
         public string HamburgTitle
         {
@@ -44,7 +45,7 @@ namespace MenuAPP.ViewModel
             set
             {
                 _hamburgTitle = value;
-                ProperyChange("HamburgTitle");
+                RaisePropertyChanged("HamburgTitle");
             }
         }
 
@@ -69,5 +70,12 @@ namespace MenuAPP.ViewModel
             IsPaneOpen = IsPaneOpen ? false : true;
             //throw new NotImplementedException();
         }
+
+
+        //public async void mainListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        //{
+             // await new Windows.UI.Popups.MessageDialog("passed x:Bind binding", "Info").ShowAsync();
+       // }
+
     }
 }

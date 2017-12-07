@@ -23,7 +23,7 @@ namespace MenuAPP.Command
                 return true;
             }
             return CancelExecute(parameter);
-            //throw new NotImplementedException();
+            
         }
 
         public void Execute(object parameter)
@@ -33,7 +33,7 @@ namespace MenuAPP.Command
                 return;
             }
             ExecuteAction(parameter);
-            //throw new NotImplementedException();
+            
         }
     }
 }

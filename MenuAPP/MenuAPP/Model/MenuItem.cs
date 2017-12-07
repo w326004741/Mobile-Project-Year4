@@ -7,7 +7,7 @@ using Windows.UI.Xaml.Controls;
 
 namespace MenuAPP.Model
 {
-    // Menu
+    // Data
     public class MenuItem
     {
         // Menu logo
