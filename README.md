@@ -1,5 +1,5 @@
 # Mobile-Project-Year4
-> Module: Mobile Application Development / 4th Year  
+> Module: Mobile Application Development 2 / 4th Year  
 > Lecturer: Damien Costello  
 > Mobile Project 2017 : MenuApp
 
