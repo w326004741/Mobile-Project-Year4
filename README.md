@@ -16,3 +16,12 @@ This application project was developed based on [MVVM](https://msdn.microsoft.co
 The `ViewModel` acts as an interface between `Model` and `View`. It provides data binding between `View` and `model` data as well as handles all UI actions by using command.
 
 The `View` binds its control value to properties on a `ViewModel`, which, in turn, exposes data contained in `Model` objects.
+
+#### UI:
+
+![image](https://github.com/w326004741/Mobile-Project-Year4/blob/master/imges/Menu.png)
+
+
+#### Structure:
+
+![image](https://github.com/w326004741/Mobile-Project-Year4/blob/master/imges/Menu3.png)
