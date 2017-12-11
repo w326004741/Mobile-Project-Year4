@@ -7,6 +7,27 @@
 
 This application project was developed based on [MVVM](https://msdn.microsoft.com/en-us/library/hh848246.aspx) design patterns.
 
+This is a simple menu APP, bases on MVVM design patterns.
+
+Data Layer :
+```
+public Symbol Icon { get; set; }
+public string Text { get; set; }
+```
+
+Data attributes  : 
+```
+private ObservableCollection<MenuItem> _menuItems;
+public ObservableCollection<MenuItem> MenuItems
+
+private bool _isPaneOpen;
+public bool IsPaneOpen
+
+private string _hamburgTitle;
+public string HamburgTitle
+
+public DelegateCommand HamburgButtonCommand { get; private set; }
+```
 ## What is MVVM?
 #### The MVVM pattern includes three key parts:
 1. `Model` (Business rule, data access, model classed).
@@ -39,6 +60,8 @@ If property values in the ViewModel change, those new values automatically propa
 
 
 ## Reference:
-[SplitView](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.splitview)
+- [SplitView](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.splitview)
 
-[ICommand Interface](https://www.codeproject.com/Tips/813345/Basic-MVVM-and-ICommand-Usage-Example)
+- [ICommand Interface](https://www.codeproject.com/Tips/813345/Basic-MVVM-and-ICommand-Usage-Example)
+
+- [Windows.UI.Xaml.Controls.Symbol - Icon](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.symbol)
