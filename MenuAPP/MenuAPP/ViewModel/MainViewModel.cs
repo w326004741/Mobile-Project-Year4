@@ -14,6 +14,7 @@ namespace MenuAPP.ViewModel
     {
         // Menu List  
         // 以下3个属性是用来做数据传输的数据属性
+        //The following attributes are used for data transmission data attributes.
         private ObservableCollection<MenuItem> _menuItems;
         public ObservableCollection<MenuItem> MenuItems
         {
